@@ -1,0 +1,8 @@
+@EndUserText.label: 'ESE_Test2 T5 - Customer access control'
+@MappingRole: true
+define role Z4929_CUSTOMER_V {
+  " Fallback authorization object from the /DMO demo package: restricts by
+  " customer country. Replace with your instructor's object if they give one.
+  grant select on Z4929_CUSTOMER_V
+    where ( CountryCode ) = aspect pfcg_auth( /DMO/TRVL, /DMO/CNTRY, ACTVT = '03' );
+}
